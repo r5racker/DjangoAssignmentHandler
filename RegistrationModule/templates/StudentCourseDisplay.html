@@ -1,0 +1,38 @@
+{% extends 'Student_base.html' %}
+	{% block content %}
+        <h2>Display Course</h2>
+		<div class="transbox">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Course Id</th>
+      
+      <th scope="col">Course</th>
+      <th scope="col">Credit</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+	{%for course in course_list %}
+	<tr>
+    <th scope="row">{{course.c_id}}.</th>
+		
+		<td>{{course.c_name}}</td>
+		
+        <td>{{course.c_credit}}</td>
+        {%if course.c_id in enrolled_list%}
+            <td><a class="btn btn-outline-primary" href="/Register/RemoveStudentCourse?c_id={{course.c_id}}" role="button">Leave</a></td>
+        {%else%}
+        <td><a class="btn btn-outline-primary" href="/Register/AddStudentCourse?c_id={{course.c_id}}" role="button">Enroll</a></td>
+        {%endif%}
+	</tr>
+    {%endfor%}
+    
+    
+        
+    </tr>
+  </tbody>
+</table>
+</div>
+    {%endblock%}

@@ -1,0 +1,39 @@
+{% extends 'Teacher_base.html' %}
+{%block content%}
+<br>
+<h2>Student List</h2>
+<center>
+<div class="transbox">
+    <table class="table table-hover table-light">
+    <thead>
+      <tr>
+          <th>Assignment ID</th>
+        <th>Student Email</th>
+        <th>Submission Date</th>
+        <th>Logic Marks</th>
+        <th>Uniqueness Marks</th>
+        <th>Quality Marks</th>
+        <th>Submitted File</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for sub in sub_list%}
+        <tr>
+            <td>{{sub.assign_id}}</td>
+            <td>{{sub.student_email}}</td>
+            <td>{{sub.submission_date}}</td>
+            <td>{{sub.submission_marks_logic}}</td>
+            <td>{{sub.submission_marks_uniqueness}}</td>
+            <td>{{sub.submission_marks_quality}}</td>
+            <td>{{sub.submission_file_name}}</td>
+            <td><a href="/manageSubmissions/ViewSubmissionFile.html?stu_email={{sub.student_email}}&assign_id={{sub.assign_id}}">View</a></td>
+        </tr>
+        {%endfor%}
+    </tbody>
+  </table>  
+
+</div>
+</center>
+
+{% endblock %}

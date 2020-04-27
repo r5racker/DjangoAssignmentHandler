@@ -1,0 +1,126 @@
+{% extends 'Student_base.html' %}
+{%block content%}
+	<center>
+  <h2>Student Profile</h2>
+  <div class="transbox">
+  <div class="card" style="width: 18rem;">
+  <img src="{{image_url}}" class="card-img-top" alt="Your Image" height="200" width="200">
+
+  
+  </div>
+  <form action="putStudentData" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+	<div class="form-group row">
+    <label for="student_first_name" class="col-sm-4 col-form-label"><strong>First Name</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="student_first_name" name="student_first_name" value="{{stu.student_first_name}}" disabled>
+    </div>
+  </div>
+	
+	<div class="form-group row">
+    <label for="student_middle_name" class="col-sm-4 col-form-label"><strong>Middle Name</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="student_middle_name" name="student_middle_name" value="{{stu.student_middle_name}}" disabled>
+    </div>
+  </div>
+	
+	<div class="form-group row">
+    <label for="student_last_name" class="col-sm-4 col-form-label"><strong>Last Name</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="student_last_name" name="student_last_name" value="{{stu.student_last_name}}" disabled>
+    </div>
+  </div>
+	
+  
+
+	<div class="form-group row">
+    <label for="student_dob" class="col-sm-4 col-form-label"><strong>Birth Date</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="student_dob" name="student_dob" value="{{stu.student_dob}}" disabled>
+    </div>
+  </div>
+
+	
+	<div class="form-group row">
+    <label for="student_semester" class="col-sm-4 col-form-label"><strong>Semester</strong></label>
+    <div class="col-sm-6">
+      
+    	 <input type="text" id="student_semester" class="form-control" name="student_semester" value="{{stu.student_semester}}" disabled/>
+        
+	</div>
+  </div>
+	
+  <div class="form-group row">
+    <label for="student_email" class="col-sm-4 col-form-label"><strong>Email</strong></label>
+    <div class="col-sm-6">
+      <input type="email" class="form-control" id="student_email" name="student_email" value="{{stu.student_email}}" disabled>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="student_address" class="col-sm-4 col-form-label"><strong>Address</strong></label>
+	<div class="col-sm-6">
+    <input type="text" class="form-control" id="student_address" name="student_address" value="{{stu.student_address}}" disabled>
+  </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="student_address2" class="col-sm-4 col-form-label"><strong>Address 2</strong></label>
+	<div class="col-sm-6">
+    <input type="text" class="form-control" id="student_address2" name="student_address2" value="{{stu.student_address2}}" disabled>
+  </div>
+  </div>
+  
+  <div class="form-group row">
+  
+    <div class="form-group col-sm-4">
+      <label for="student_city" class="col-md-6 col-form-label"><strong>City</strong></label>
+	  <div class="col-md-6">
+      <input type="text" class="form-control" id="student_city" name="student_city" value="{{stu.student_city}}" disabled>
+    </div>
+	</div>
+	
+    <div class="form-group col-sm-4">
+      <label for="student_state" class="col-md-6 col-form-label"><strong>State</strong></label>
+	  <div class="col-md-6">
+      <input type="text" id="student_state" class="form-control" name="student_state" value="{{stu.student_state}}" disabled>
+    </div>
+	</div>
+	
+    <div class="form-group col-sm-4">
+      <label for="student_zip" class="col-md-6 col-form-label"><strong>Zip</strong></label>
+	  <div class="col-md-6">
+      <input type="text" class="form-control" id="student_zip" name="student_zip" value="{{stu.student_zip}}" disabled>
+    </div>
+	</div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="student_mobile_no" class="col-sm-4 col-form-label"><strong>Mobile No.</strong></label>
+	<div class="col-sm-6">
+    <input type="text" class="form-control" id="student_mobile_no" name="student_mobile_no" value="{{stu.student_mobile_no}}" disabled>
+  </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="student_id_no" class="col-sm-4 col-form-label"><strong>Id No.</strong></label>
+	<div class="col-sm-6">
+    <input type="text" class="form-control" id="student_id_no" name="student_id_no" value="{{stu.student_id_no}}" disabled>
+  </div>
+  </div>
+  
+  <!--<div class="form-group row">
+    <label for="student_image" class="col-sm-4 col-form-label">Upload Image</label>
+	<div class="col-sm-6">
+    <input type="file" class="form-control-file" id="student_image" name="student_image" required>
+  </div>
+  </div>-->
+  
+  <!--button type="submit" class="btn btn-primary">Submit<button-->
+  
+  </form>
+  </div>
+  </center>
+{%endblock%}
+
+

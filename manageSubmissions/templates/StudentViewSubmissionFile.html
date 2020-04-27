@@ -1,0 +1,18 @@
+{%extends 'Student_base.html'%}
+
+{%block content%}
+<h2>Submitted File</h2>
+<br>
+<div class="transbox">
+<p><strong>{{file_name}}</strong></p>
+<div id="list">
+  <p>
+      <textarea rows=25 cols="80%" style="font-weight: bold;">
+        {{file_content}}
+      </textarea>
+  </p>
+</div>
+
+<br>
+
+{%endblock%}

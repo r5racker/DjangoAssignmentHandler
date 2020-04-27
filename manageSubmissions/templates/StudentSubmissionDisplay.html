@@ -1,0 +1,59 @@
+{% extends 'Student_base.html' %}
+	{% block content %}
+    <h2>Display Submission</h2>
+    <br>
+	<div class="transbox">
+    <form action="/manageSubmissions/StudentSubmissionDisplay.html" method="post" ">
+      {% csrf_token %}
+      
+    <div class="row">
+    <label for="student_course" class="col-sm-4 col-form-label">Course</label>
+    <div class="col-sm-6">
+      <select id="student_course_id" class="form-control" name="student_course_id" required onchange="this.form.submit()">
+        <option value="0">Choose...</option>
+        
+        {%for c in course_list %}
+             {%if c.c_id == course_option %} 
+              <option value={{c.c_id}} selected>{{c.c_name}}</option>
+            {%else%}
+            
+            <option value={{c.c_id}}>{{c.c_name}}</option>
+            
+            {%endif%}
+            
+          {%endfor%}
+      </select>
+  </div>
+  </div><br>
+    </form>
+
+  <table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">Assignment Id</th>
+      <th scope="col">Due Date & Time</th>
+      <th scope="col">File Name</th>
+      <th scope="col">Marks for logic</th>
+      <th scope="col">Marks for uniqueness</th>
+      <th scope="col">Marks for quality</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+	{%for sub in sub_list %}
+	<tr>
+    <td>{{sub.assign_id}}</td>
+    <td>{{sub.submission_date}}</td>
+    <td>{{sub.submission_file_name}}</td>
+    <td>{{sub.submission_marks_logic}}</td>
+    <td>{{sub.submission_marks_uniqueness}}</td>
+    <td>{{sub.submission_marks_quality}}</td>
+    <td><a href="/manageSubmissions/StudentViewSubmissionFile.html?assign_id={{sub.assign_id}}">View</a>
+      <a href="/manageSubmissions/removeSubmission?assign_id={{sub.assign_id}}">Remove</a>
+    </td>
+	</tr>
+	{%endfor%}
+  </tbody>
+</table>
+</div>
+    {%endblock%}

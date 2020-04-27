@@ -1,0 +1,48 @@
+{%extends 'Teacher_base.html'%}
+
+{%block content%}
+<h2>Submitted File</h2>
+<br>
+<div class="transbox">
+<p><strong>{{file_name}}</strong></p><br>
+<div id="list">
+  <p>
+      <textarea rows=25 cols="80%" style="font-weight: bold;">
+        {{file_content}}
+      </textarea>
+  </p>
+</div>
+
+<br>
+        <center>
+	<form action="/manageSubmissions/SetSubmissionMarks" method="post">
+    {% csrf_token %}
+    <input type="hidden" name='student_email' id='student_email' value="{{stu_email}}">
+    <input type="hidden" name='assign_id' id='assign_id' value="{{assign_id}}">
+	<div class="form-group row">
+    <label for="submission_marks_logic" class="col-sm-4 col-form-label"><strong>Logic</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="submission_marks_logic" name="submission_marks_logic">
+	</div>
+  </div>
+  <div class="form-group row">
+    <label for=" submission_marks_uniqueness" class="col-sm-4 col-form-label"><strong>Uniqueness</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="submission_marks_uniqueness" name="submission_marks_uniqueness">
+	</div>
+  </div>
+  <div class="form-group row">
+    <label for="submission_marks_quality" class="col-sm-4 col-form-label"><strong>Quality</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="submission_marks_quality" name="submission_marks_quality">
+	</div>
+  </div>
+	#can add a field for comments by teacher on submitted work<br>
+<button type="submit" class="btn btn-dark">Submit</button>
+  
+  </form>
+  <br>
+  </div>
+</center>
+
+{%endblock%}

@@ -1,0 +1,33 @@
+{% extends 'Student_base.html' %}
+	{% block content %}
+        <h2>Home Page</h2>
+		<center>
+		<div class="transbox">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Assignment Name</th>
+      <th scope="col">Course</th>
+      <th scope="col">Due Date & Time</th>
+      <th scope="col">Assignment File </th>
+      <th scope="col"> Submission Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+	{%for ass in ass_list %}
+	<tr>
+		<td>{{ass.assign_id}}</td>
+		<td>{{ass.assign_name}}</td>
+		<td>{{ass.c_id}}</td>
+    <td>{{ass.assign_due_date}}</td>
+    <td><a class="btn btn-dark" role="button" href="{{ass.assign_file.url}}">View</a></td>
+		<td><a class="btn btn-dark" role="button" href="/manageSubmissions/SubmissionPage.html?assign_id={{ass.assign_id}}">Submit</a></td>
+	</tr>
+	{%endfor%}
+  </tbody>
+</table>
+</div>
+</center>
+    {%endblock%}

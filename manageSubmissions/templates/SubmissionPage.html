@@ -1,0 +1,47 @@
+{% extends 'Student_base.html' %}
+        {%block content%}
+        <h2>Submit Assignment</h2>
+        <center>
+		<div class="transbox">
+          <form action="/manageSubmissions/addSubmission" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="form-group row">
+            <label for="student_assignment_id" class="col-sm-4 col-form-label"><strong>Assignment Id</strong></label>
+            <div class="col-sm-6">
+              
+               <select id="student_assignment_id" class="form-control" name="student_assignment_id" required>
+                     <option >Choose...</option>
+                
+            {%for ass in ass_list%}
+              {%if ass.assign_id == ass_id %}
+                <option value={{ass.assign_id}} selected>{{ass.assign_id}}</option>
+              {%else%}
+                <option value={{ass.assign_id}} >{{ass.assign_id}}</option>
+              {%endif%}
+              
+            {%endfor%}
+              </select>
+          </div>
+          </div>
+          
+          <div class="form-group row">
+            <label for="student_submission_email" class="col-sm-4 col-form-label"><strong>Email</strong></label>
+            <div class="col-sm-6">
+              <input type="email" class="form-control" id="student_submission_email" name="student_submission_email" required value="{{student_email}}">
+            </div>
+          </div>
+                <div class="form-group row">
+            <label for="student_file" class="col-sm-4 col-form-label"><strong>Upload File</strong></label>
+          <div class="col-sm-6">
+            <input type="file" class="form-control-file" id="student_file" name="student_file" required>
+          </div>
+          </div>
+          
+          <button type="submit" class="btn btn-dark">Submit</button>
+          
+          </form>
+		  <br>
+		  </div>
+        </center>
+{% endblock %}
+

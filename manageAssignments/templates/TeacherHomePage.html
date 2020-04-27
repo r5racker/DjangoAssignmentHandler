@@ -1,0 +1,44 @@
+{%extends 'Teacher_base.html'%}
+{%block content%}
+<h2>Home Page</h2>
+<center>
+<div class="transbox">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Assignment Name</th>
+        <th scope="col">Assignment Id</th>
+        <th scope="col">Course Id</th>
+        
+        <th scope="col">Due Date</th>
+        <th scope="col">Maximum Size</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for ass in ass_list %}
+      <tr>
+          
+          <td>{{ass.assign_name}}</td>
+          <td>{{ass.assign_id}}</td>
+          <td>{{ass.c_id}}</td>
+          <td>{{ass.assign_due_date}}</td>
+          <td>{{ass.assign_max_size_kb}}</a></td>
+          <td>
+            <a class="btn btn-outline-primary" href="/manageSubmissions/TeacherSubmissionDisplay.html?teacher_course_id={{ass.c_id}}&teacher_assignment_id={{ass.assign_id}}" role="button">
+              View Submissions
+            </a>
+          </td>
+      </tr>
+      
+      {%endfor%}
+      <tr>
+        <td>
+          <a href="/manageAssignments/AssignmentPage.html" class="btn btn-dark" role="button">add assignments</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</center>
+</div>
+{%endblock%}

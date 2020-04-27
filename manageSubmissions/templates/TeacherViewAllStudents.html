@@ -1,0 +1,34 @@
+{% extends 'Teacher_base.html' %}
+{%block content%}
+<br>
+<h2>Student List</h2>
+<center>
+<div class="transbox">
+    <table class="table table-hover table-light">
+    <thead>
+      <tr>
+        <th>Student Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Id</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for stu in stu_list%}
+        <tr>
+            <td>{{stu.student_email}}</td>
+            <td>{{stu.student_first_name}}</td>
+            <td>{{stu.student_last_name}}</td>
+            <td>{{stu.student_id_no}}</td>
+            <td><a class="btn btn-dark" role="button" href="/manageSubmissions/ViewAllSubmissions.html?student_email={{stu.student_email}}">View</a></td>
+        </tr>
+      {%endfor%}
+
+    </tbody>
+  </table>  
+
+</div>
+</center>
+
+{% endblock %}

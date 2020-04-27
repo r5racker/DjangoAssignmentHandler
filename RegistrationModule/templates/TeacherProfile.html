@@ -1,0 +1,100 @@
+{% extends 'Teacher_base.html' %}
+{%block content%}
+	<center>
+  <h2>Teacher Profile</h2>
+  <div class="transbox">
+  <div class="card" style="width: 18rem;">
+  <img src="{{image_url}}" class="card-img-top" alt="Your Image" height="200 " width="200">
+  
+  </div>
+  
+    <div class="form-group row">
+      <label for="teacher_first_name" class="col-sm-4 col-form-label"><strong>First Name</strong></label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="teacher_first_name" name="teacher_first_name" value="{{tchr.teacher_first_name}}" disabled>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="teacher_Middle_name" class="col-sm-4 col-form-label"><strong>Middle Name</strong></label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="teacher_Middle_name" name="teacher_Middle_name" value="{{tchr.teacher_middle_name}}" disabled>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="teacher_last_name" class="col-sm-4 col-form-label"><strong>Last Name</strong></label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="teacher_last_name"  name="teacher_last_name" value="{{tchr.teacher_last_name}}" disabled>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="teacher_dob" class="col-sm-4 col-form-label"><strong>Birth Date</strong></label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="teacher_dob" name="teacher_dob" value="{{tchr.teacher_dob}}" disabled>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="teacher_email" class="col-sm-4 col-form-label"><strong>Email</strong></label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" id="teacher_email" name="teacher_email" value="{{tchr.teacher_email}}" disabled>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="teacher_address" class="col-sm-4 col-form-label"><strong>Address</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="teacher_address" placeholder="1234 Main St" name="teacher_address" value="{{tchr.teacher_address}}" disabled>
+    </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="teacher_address2" class="col-sm-4 col-form-label"><strong>Address 2</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="teacher_address2" placeholder="Apartment, studio, or floor" name="teacher_address2" value="{{tchr.teacher_address2}}" disabled>
+    </div>
+    </div>
+    
+    <div class="form-group row">
+    
+      <div class="form-group col-sm-4">
+        <label for="teacher_city" class="col-md-6 col-form-label"><strong>City</strong></label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="teacher_city" name="teacher_city" value="{{tchr.teacher_city}}" disabled>
+      </div>
+    </div>
+    
+      <div class="form-group col-sm-4">
+        <label for="teacher_state" class="col-md-6 col-form-label"><strong>State</strong></label>
+      <div class="col-md-6">
+        <input type="text" id="teacher_state" class="form-control" name="teacher_state" value="{{tchr.teacher_state}}" disabled>
+      </div>
+    </div>
+    
+      <div class="form-group col-sm-4">
+        <label for="teacher_zip" class="col-md-6 col-form-label"><strong>Zip</strong></label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="teacher_zip" name="teacher_zip" value="{{tchr.teacher_zip}}" disabled>
+      </div>
+    </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="teacher_mobile_no" class="col-sm-4 col-form-label"><strong>Mobile No.</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="teacher_mobile_no" name="teacher_mobile_no" value="{{tchr.teacher_mobile_no}}" disabled>
+    </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="teacher_id_no" class="col-sm-4 col-form-label"><strong>Id No.</strong></label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="teacher_id_no" name="teacher_id_no" value="{{tchr.teacher_id_no}}" disabled>
+    </div>
+    </div>
+    
+  </div>
+  </center>
+{%endblock%}
