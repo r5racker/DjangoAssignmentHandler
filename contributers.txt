@@ -1,0 +1,6 @@
+This Application was developed as Project for completion of Sem-4 by team of 3 Students:
+1. Bhensdadia Rahil (https://github.com/r5racker)
+2. Patel Aastha (https://github.com/AasthaPatel27)
+3. Amehtiya Yash (https://github.com/yash-a-18)
+
+The working repository was https://github.com/yash-a-18/assignmentHandler which is now simplified to a separate Repository for Django
